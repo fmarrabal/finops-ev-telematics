@@ -1,0 +1,54 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+type: software
+title: "FinOps Cloud Cost Forecasting for EV Telematics Platforms"
+version: 1.0.0
+date-released: 2025-01-01
+url: "https://github.com/your-username/finops-ev-telematics"
+repository-code: "https://github.com/your-username/finops-ev-telematics"
+license: MIT
+authors:
+  - family-names: "Valdivieso"
+    given-names: "Víctor"
+  - family-names: "Arrabal-Campos"
+    given-names: "Francisco Manuel"
+    orcid: "https://orcid.org/0000-0000-0000-0000"
+  - family-names: "Sonderstrub"
+    given-names: "Christian"
+  - family-names: "Cama-Pinto"
+    given-names: "Dora"
+  - family-names: "Cama-Pinto"
+    given-names: "Alejandro"
+keywords:
+  - FinOps
+  - Cloud Cost Optimization
+  - Machine Learning
+  - Electric Vehicles
+  - Telematics
+  - Time Series Forecasting
+  - LSTM
+  - ARIMA
+  - Prophet
+abstract: >-
+  Machine learning forecasting framework for cloud cost optimization 
+  in electric vehicle telematics platforms. Implements polynomial regression,
+  ARIMA, Facebook Prophet, and LSTM neural networks for cost prediction
+  and counterfactual analysis within a FinOps governance framework.
+preferred-citation:
+  type: article
+  authors:
+    - family-names: "Valdivieso"
+      given-names: "Víctor"
+    - family-names: "Arrabal-Campos"
+      given-names: "Francisco Manuel"
+    - family-names: "Sonderstrub"
+      given-names: "Christian"
+    - family-names: "Cama-Pinto"
+      given-names: "Dora"
+    - family-names: "Cama-Pinto"
+      given-names: "Alejandro"
+  title: "Machine Learning-Powered FinOps: Cloud Cost Forecasting and Optimization for Electric Vehicle Telematics Platforms"
+  journal: "Journal of Cleaner Production"
+  year: 2025
+  publisher:
+    name: "Elsevier"
