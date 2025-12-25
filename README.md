@@ -237,8 +237,8 @@ The authors gratefully acknowledge **Microsoft EMEA Client Delivery Partner** (M
 ## 📧 Contact
 
 **Francisco Manuel Arrabal-Campos** (Corresponding Author)
-- Email: [your-email@university.edu]
-- ORCID: [0000-0000-0000-0000]
+- Email: fmarrabal@ual.es
+- ORCID: 0000-0002-5510-6297
 
 ---
 
