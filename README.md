@@ -2,7 +2,7 @@
 
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![DOI](https://img.shields.io/badge/DOI-10.1016%2Fj.jclepro-green.svg)](https://doi.org/10.1016/j.jclepro.2025.xxxxx)
+[![DOI](https://img.shields.io/badge/DOI-10.1016%2Fj.jclepro-green.svg)](https://doi.org/XXXXX/j.jclepro.2025.xxxxx)
 
 ## 📄 About
 
