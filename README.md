@@ -233,6 +233,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 🙏 Acknowledgements
 
 The authors gratefully acknowledge **Microsoft EMEA Client Delivery Partner** (Microsoft Campus, Carmenhall Road, Sandyford Business Park, Dublin D18 FW88, Ireland) for their technical support and collaboration in the development and optimization of the Azure cloud infrastructure that enabled this research.
+This research has been funded by the State Research Agency of the Spanish Ministry of Science and Innovation (PDC2021-121248-I00, PLEC2021-007774, PID2021-126445OB-I00 and CPP2022-009967) and by the Gobierno de España MCIN/AEI/10.13039/501100011033 and Unión Europea “Next Generation EU”/PRTR.
 
 ## 📧 Contact
 
