@@ -8,7 +8,7 @@
 
 This repository contains the source code and data for the research paper:
 
-> **"Machine Learning-Powered FinOps: Cloud Cost Forecasting and Optimization for Electric Vehicle Telematics Platforms"**
+> **"FinOps-Driven Cloud Cost Optimization in Electric Vehicle Telematics Platforms: A Longitudinal Case Study with Machine Learning Forecasting"**
 >
 > Víctor Valdivieso, Francisco Manuel Arrabal-Campos*, Christian Sonderstrub, Dora Cama-Pinto, Alejandro Cama-Pinto
 >
