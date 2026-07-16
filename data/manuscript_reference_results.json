@@ -1,0 +1,67 @@
+{
+  "data": {
+    "unique_months": 51,
+    "calibration_months": 12,
+    "strict_post_months": 39,
+    "implementation_series_months": 40
+  },
+  "counterfactual": {
+    "quadratic_coefficients": [
+      39.6404895,
+      -0.333528442,
+      0.00942169178
+    ],
+    "loocv_rmse": 1.60039256,
+    "final_cost": 1718.04174746,
+    "final_observed_cost": 45.08,
+    "final_gap_percent": 97.37608239,
+    "pi95": [
+      1366.99476227,
+      2069.08873265
+    ],
+    "jackknife_gamma": [
+      0.00873234917,
+      0.01014092954
+    ],
+    "jackknife_final": [
+      1626.30230225,
+      1817.80115832
+    ]
+  },
+  "benchmark": {
+    "friedman_chi2": 20.5,
+    "friedman_p": 0.0022551456,
+    "smallest_holm_adjusted_p": 0.09375,
+    "arima_rmse": 2.39524862,
+    "transformer_rmse": 2.65,
+    "tcn_rmse": 5.62,
+    "lstm_rmse": 7.0,
+    "prob_lstm_rmse": 7.65,
+    "naive_rmse": 8.12802969,
+    "arima_interval_width": 7.23065772,
+    "prob_lstm_interval_width": 23.45
+  },
+  "its_primary": {
+    "level_percent": -45.59769122,
+    "level_ci": [
+      -53.845,
+      -35.87
+    ],
+    "slope_percent": -3.59531487,
+    "slope_ci": [
+      -5.56,
+      -1.59
+    ],
+    "r2": 0.97441807,
+    "pre_slope_percent": -0.97637343,
+    "post_slope_percent": -4.53658461
+  },
+  "kpis": {
+    "vehicle_change_percent": 340.14,
+    "message_change_percent": 906.85,
+    "cloud_cost_change_percent": -54.92,
+    "cost_per_vehicle_change_percent": -89.7587,
+    "cost_per_message_change_percent": -95.52,
+    "efficiency_factor": 22.3214
+  }
+}

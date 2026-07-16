@@ -1,54 +1,36 @@
 cff-version: 1.2.0
-message: "If you use this software, please cite it as below."
+message: "Please cite the associated manuscript when using this code or indexed dataset."
+title: "FinOps-Driven Cloud Cost Optimization in Electric Vehicle Telematics Platforms: Reproducibility Package"
 type: software
-title: "FinOps Cloud Cost Forecasting for EV Telematics Platforms"
-version: 1.0.0
-date-released: 2025-01-01
-url: "https://github.com/your-username/finops-ev-telematics"
-repository-code: "https://github.com/your-username/finops-ev-telematics"
+version: 2.0.0
+date-released: 2026-07-13
+repository-code: "https://github.com/fmarrabal/finops-ev-telematics"
 license: MIT
 authors:
-  - family-names: "Valdivieso"
-    given-names: "Víctor"
-  - family-names: "Arrabal-Campos"
-    given-names: "Francisco Manuel"
-    orcid: "https://orcid.org/0000-0000-0000-0000"
-  - family-names: "Sonderstrub"
-    given-names: "Christian"
-  - family-names: "Cama-Pinto"
-    given-names: "Dora"
-  - family-names: "Cama-Pinto"
-    given-names: "Alejandro"
-keywords:
-  - FinOps
-  - Cloud Cost Optimization
-  - Machine Learning
-  - Electric Vehicles
-  - Telematics
-  - Time Series Forecasting
-  - LSTM
-  - ARIMA
-  - Prophet
-abstract: >-
-  Machine learning forecasting framework for cloud cost optimization 
-  in electric vehicle telematics platforms. Implements polynomial regression,
-  ARIMA, Facebook Prophet, and LSTM neural networks for cost prediction
-  and counterfactual analysis within a FinOps governance framework.
+  - family-names: Valdivieso
+    given-names: Víctor
+  - family-names: Arrabal-Campos
+    given-names: Francisco Manuel
+    orcid: "https://orcid.org/0000-0002-5510-6297"
+  - family-names: Sonderstrup
+    given-names: Christian
+  - family-names: Cama-Pinto
+    given-names: Dora
+  - family-names: Cama-Pinto
+    given-names: Alejandro
 preferred-citation:
   type: article
+  title: "FinOps-Driven Cloud Cost Optimization in Electric Vehicle Telematics Platforms: A Longitudinal Case Study with Demand-Controlled Forecasting"
+  journal: "Expert Systems with Applications"
+  year: 2026
   authors:
-    - family-names: "Valdivieso"
-      given-names: "Víctor"
-    - family-names: "Arrabal-Campos"
-      given-names: "Francisco Manuel"
-    - family-names: "Sonderstrub"
-      given-names: "Christian"
-    - family-names: "Cama-Pinto"
-      given-names: "Dora"
-    - family-names: "Cama-Pinto"
-      given-names: "Alejandro"
-  title: "Machine Learning-Powered FinOps: Cloud Cost Forecasting and Optimization for Electric Vehicle Telematics Platforms"
-  journal: "Journal of Cleaner Production"
-  year: 2025
-  publisher:
-    name: "Elsevier"
+    - family-names: Valdivieso
+      given-names: Víctor
+    - family-names: Sonderstrup
+      given-names: Christian
+    - family-names: Cama-Pinto
+      given-names: Dora
+    - family-names: Cama-Pinto
+      given-names: Alejandro
+    - family-names: Arrabal-Campos
+      given-names: Francisco Manuel
