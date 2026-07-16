@@ -1,0 +1,12 @@
+cost_item,share_percent
+Azure Cosmos DB,28.8
+Virtual Machines,24.5
+Service Bus,9.4
+Storage,8.4
+Insight and Analytics,4.7
+Microsoft Defender for Cloud,3.8
+IoT Hub,3.1
+Bandwidth,3.0
+Functions,2.1
+Redis Cache,2.0
+Other Services,10.3

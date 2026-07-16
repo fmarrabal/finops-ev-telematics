@@ -1,248 +1,158 @@
-# FinOps Cloud Cost Forecasting for EV Telematics Platforms
+# FinOps-Driven Cloud Cost Optimization in EV Telematics
 
-[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![DOI](https://img.shields.io/badge/DOI-XXXXX%2Fj.jclepro-green.svg)](https://doi.org/XXXXX/j.XXXXX.2025.xxxxx)
+Reproducibility package for the manuscript:
 
-## 📄 About
+> **FinOps-Driven Cloud Cost Optimization in Electric Vehicle Telematics Platforms: A Longitudinal Case Study with Demand-Controlled Forecasting**  
+> Víctor Valdivieso, Christian Sonderstrup, Dora Cama-Pinto, Alejandro Cama-Pinto, and Francisco Manuel Arrabal-Campos  
+> *Expert Systems with Applications*, manuscript ESWA-D-26-06640R1/R2.
 
-This repository contains the source code and data for the research paper:
+The repository reproduces the numerical analyses, statistical tests, manuscript tables, and Figures 1-5 from the indexed case-study data. Raw monetary, billing, and vehicle payload data remain proprietary and are not distributed.
 
-> **"FinOps-Driven Cloud Cost Optimization in Electric Vehicle Telematics Platforms: A Longitudinal Case Study with Machine Learning Forecasting"**
->
-> Víctor Valdivieso, Francisco Manuel Arrabal-Campos*, Christian Sonderstrub, Dora Cama-Pinto, Alejandro Cama-Pinto
->
-> *Journal of Cleaner Production* (2025)
+## Main reproduced results
 
-The study demonstrates how machine learning forecasting methods can be integrated with FinOps (Cloud Financial Operations) practices to achieve substantial cost reductions in cloud-native EV telematics platforms.
+- 51 unique monthly observations: 12 calibration months, one shared June 2021 boundary counted once, and 39 strictly post-boundary months.
+- Observed fleet growth: 100 to 440.14; message growth: 100 to 1006.85.
+- Observed total cloud cost: 100 to 45.08.
+- Cost per active vehicle: 100 to 10.24; cost per billion messages: 100 to 4.48.
+- Quadratic demand counterfactual at the final vehicle index: 1718.04, with 95% prediction interval 1366.99-2069.09.
+- Common-fold benchmark: ARIMA RMSE 2.39; compact Transformer RMSE 2.65.
+- Friedman chi-square(6) = 20.50, p = 0.0023; no pairwise comparison with ARIMA survives Holm correction.
+- Primary interrupted time-series estimate: -45.6% immediate level change and -3.60% additional monthly slope change in cost per active vehicle.
 
-## 🎯 Key Results
-
-| Metric | Pre-FinOps | Post-FinOps | Change |
-|--------|------------|-------------|--------|
-| Vehicle Fleet | 100 | 440 | **+340%** |
-| Monthly Messages | 100 | 1,007 | **+907%** |
-| Total Cloud Cost | 100 | 45 | **-55%** |
-| Cost per Billion Messages | 100 | 4.48 | **-95.5%** |
-| **Efficiency Factor** | 1.0× | **22.3×** | **+2,130%** |
-
-## 📊 Forecasting Models Performance
-
-| Model | R² | RMSE | MAE | MAPE (%) | sMAPE (%) |
-|-------|-----|------|-----|----------|-----------|
-| Polynomial (degree 2) | 0.996 | 1.221 | 1.034 | 2.05 | 2.05 |
-| ARIMA (1,1,0) | 0.989 | 1.974 | 1.815 | 3.13 | 3.17 |
-| Facebook Prophet | 0.924 | 5.312 | 4.560 | 8.37 | 8.56 |
-| LSTM Neural Network | 0.948 | 4.125 | 3.307 | 5.24 | 5.02 |
-
-## 🔬 Methodology
-
-### FinOps Framework
-The study applies the **Inform-Optimize-Operate** FinOps framework:
-
-1. **Inform Phase**: Cost visibility, allocation, and benchmarking
-2. **Optimize Phase**: Rate optimization, usage optimization, and resource rightsizing
-3. **Operate Phase**: Continuous monitoring, governance, and anomaly detection
-
-### Five-Layer Optimization Model
-```
-┌─────────────────────────────────────────────────────────────┐
-│  Layer 5: PURCHASING (Commitment discounts, Reserved)       │
-├─────────────────────────────────────────────────────────────┤
-│  Layer 4: HARDWARE (Rightsizing, Instance selection)        │
-├─────────────────────────────────────────────────────────────┤
-│  Layer 3: CONFIGURATION (Autoscaling, Lifecycle policies)   │
-├─────────────────────────────────────────────────────────────┤
-│  Layer 2: IMPLEMENTATION (Query optimization, Caching)      │
-├─────────────────────────────────────────────────────────────┤
-│  Layer 1: ACTIVITY (Data retention, Sampling strategies)    │
-└─────────────────────────────────────────────────────────────┘
-```
-
-### Machine Learning Forecasting Approaches
-
-1. **Polynomial Regression**: Demand-controlled baseline relating cloud cost to vehicle count
-   - Equation: `C(V) = 39.64 - 0.334V + 0.0094V²`
-   - Best overall performance (MAPE = 2.05%)
-
-2. **ARIMA (1,1,0)**: Time series forecasting capturing temporal autocorrelation
-   - Robust performance (MAPE = 3.13%)
-
-3. **Facebook Prophet**: Automatic trend and seasonality handling
-   - Best for business planning scenarios
-
-4. **LSTM Neural Network**: Deep learning for non-linear pattern recognition
-   - Potential for improved performance with longer training windows
-
-### Counterfactual Analysis
-The polynomial regression model enables counterfactual analysis by projecting what costs *would have been* without FinOps interventions, allowing rigorous attribution of savings.
-
-## 🚀 Quick Start
-
-### Prerequisites
-- Python 3.8 or higher
-- pip package manager
-
-### Installation
+## Quick reproduction
 
 ```bash
-# Clone the repository
-git clone https://github.com/your-username/finops-ev-telematics.git
-cd finops-ev-telematics
-
-# Create virtual environment (recommended)
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-
-# Install dependencies
-pip install -r requirements.txt
+python -m venv .venv
+source .venv/bin/activate        # Windows: .venv\Scripts\activate
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
+python reproduce.py
+pytest -q
 ```
 
-### Running the Analysis
+For the exact dependency versions used to validate this archive, replace `requirements.txt` with `requirements-lock.txt`. Development and test pins are available in `requirements-dev-lock.txt`.
+
+The command writes:
+
+```text
+outputs/
+├── REPRODUCIBILITY_REPORT.md
+├── results_summary.json
+├── figures/
+│   ├── Figure1_evaluation_architecture.png
+│   ├── Figure2_planning_projections.png
+│   ├── Figure3_cost_vehicle_quadratic.png
+│   ├── Figure4_forecasting_and_finops_impact.png
+│   └── Figure5_its_and_uncertainty.png
+└── tables/
+    ├── table3_baseline_diagnostics_published.csv
+    ├── table4_functional_form_sensitivity.csv
+    ├── table5_common_fold_benchmark.csv
+    ├── table5_pairwise_holm_tests.csv
+    ├── table6_interrupted_time_series.csv
+    ├── table7_observed_kpis.csv
+    ├── table8_service_cost_shares.csv
+    ├── table9_uncertainty_scenarios.csv
+    └── ...
+```
+
+A numerical-only run is available through:
 
 ```bash
-# Run the complete analysis
-python src/finops_forecasting.py
-
-# Output files will be generated:
-#   - Figure3_column.png (publication figure)
-#   - model_metrics_final.csv (performance metrics)
+python reproduce.py --skip-figures
 ```
 
-## 📁 Repository Structure
+or:
 
-```
-finops-ev-telematics/
-├── README.md                 # This file
-├── LICENSE                   # MIT License
-├── requirements.txt          # Python dependencies
-├── setup.py                  # Package installation
-├── CITATION.cff              # Citation information
-├── .gitignore               # Git ignore rules
-│
-├── src/                      # Source code
-│   ├── __init__.py
-│   ├── finops_forecasting.py # Main analysis script
-│   ├── models/               # Model implementations
-│   │   ├── __init__.py
-│   │   ├── polynomial.py
-│   │   ├── arima.py
-│   │   ├── prophet_model.py
-│   │   └── lstm.py
-│   └── utils/                # Utility functions
-│       ├── __init__.py
-│       ├── metrics.py
-│       └── visualization.py
-│
-├── data/                     # Data files
-│   ├── README.md
-│   └── sample_data.csv
-│
-├── figures/                  # Generated figures
-│   └── README.md
-│
-├── docs/                     # Documentation
-│   ├── methodology.md
-│   └── api_reference.md
-│
-└── tests/                    # Unit tests
-    ├── __init__.py
-    └── test_models.py
+```bash
+make numerical
 ```
 
-## 📈 Generated Figures
+## Why an exact prediction ledger is included
 
-### Figure 3: Forecasting Results and FinOps Impact
+Deep-learning forecasts can change slightly across PyTorch, BLAS, compiler, and CPU versions even when random seeds are fixed. To make the published statistical comparison completely deterministic, `data/published_common_fold_predictions.csv` stores the six held-out forecasts used in manuscript Table 5. The pipeline recomputes every metric, interval diagnostic, Friedman test, Wilcoxon test, and Holm correction from that ledger.
 
-The main visualization includes three panels:
+The repository also contains executable PyTorch implementations of the compact LSTM, TCN, Transformer, and probabilistic LSTM. They can be independently retrained with:
 
-- **(a) Forecasting Models Comparison**: 40-month predictions from all ML models with 95% prediction intervals
-- **(b) Counterfactual Analysis**: Actual costs vs. projected costs without FinOps (orange shading = 95% PI, green shading = savings)
-- **(c) Efficiency Evolution**: 22.3× improvement in cost per billion messages
-
-## 🔧 Configuration
-
-### Model Parameters
-
-```python
-# Polynomial Regression
-POLYNOMIAL_DEGREE = 2
-
-# ARIMA
-ARIMA_ORDER = (1, 1, 0)
-
-# LSTM
-LSTM_LOOKBACK = 3
-LSTM_UNITS = [50, 30]
-LSTM_EPOCHS = 300
-LSTM_BATCH_SIZE = 2
-LSTM_LEARNING_RATE = 0.005
-
-# Prophet
-PROPHET_CHANGEPOINT_PRIOR = 0.05
+```bash
+python -m pip install -r requirements-neural.txt
+python scripts/retrain_neural_models.py
 ```
 
-### Visualization Settings
+Retrained outputs are written separately under `outputs/retrained_neural/` and compared with the immutable publication ledger. The archived ledger is not replaced automatically.
 
-```python
-# Publication quality settings
-FIGURE_DPI = 300
-FONT_FAMILY = 'serif'
-FONT_SIZE = 11
+## Data structure
+
+`data/indexed_monthly_data.csv` contains one row for each unique month from July 2020 to September 2024. June 2021 is normalized to 100 and occurs once. The main variables are:
+
+- `cloud_cost_index`
+- `vehicles_index`
+- `total_messages_index`
+- `cost_per_vehicle_index`
+- `cost_per_billion_messages_index`
+
+`data/implementation_series.csv` contains the 40-month boundary-to-endpoint series from June 2021 through September 2024. It is used for observed KPI reporting and counterfactual scenario plots.
+
+All data are aggregated and indexed. No raw vehicle payloads or personally identifiable information are included.
+
+## Analysis design
+
+The workflow separates three forms of evidence:
+
+1. **Directly observed outcomes:** total cost and demand-normalized unit costs.
+2. **Model-dependent counterfactuals:** linear, quadratic, exponential, log-linear, and power-law cost-demand functions, with prediction intervals and demand scenarios.
+3. **Quasi-experimental temporal evidence:** segmented regression of log cost per active vehicle with corrected Newey-West standard errors and implementation-lag sensitivity.
+
+The common-fold forecasting benchmark uses six expanding-window, one-step-ahead origins. The first six months form the minimum training window, and months 7-12 are forecast sequentially without leakage.
+
+## Reproducibility checks
+
+`python reproduce.py` exits with a non-zero status if a core reference check fails. The checks include:
+
+- quadratic coefficients and LOOCV RMSE;
+- final counterfactual estimate;
+- Friedman statistic and minimum Holm-adjusted p-value;
+- primary interrupted time-series level and slope changes.
+
+The detailed check table is written to `outputs/tables/reproducibility_checks.csv`.
+
+## Public rounding and Table 3
+
+The distributed index series is rounded for confidentiality. The pipeline therefore writes two diagnostic files:
+
+- `table3_baseline_diagnostics_published.csv`: exact display values reported in the manuscript;
+- `table3_diagnostics_recomputed_public_indices.csv`: a fresh recomputation from the released rounded index values.
+
+The central counterfactual, sensitivity, benchmark, ITS, KPI, and uncertainty results are reproduced directly from the released values and prediction ledger.
+
+## Repository structure
+
+```text
+.
+├── data/                       # Indexed data and immutable prediction ledgers
+├── docs/                       # Method and output documentation
+├── scripts/                    # Optional neural retraining
+├── src/finops_repro/           # Reusable analysis package
+├── tests/                      # Numerical regression tests
+├── .github/workflows/          # Automatic reproduction on GitHub Actions
+├── reproduce.py                # Main entry point
+├── Dockerfile
+├── Makefile
+├── pyproject.toml
+└── requirements*.txt
 ```
 
-## 📚 Dependencies
+## Docker
 
-- **numpy** >= 1.21.0
-- **pandas** >= 1.3.0
-- **matplotlib** >= 3.4.0
-- **scikit-learn** >= 0.24.0
-- **statsmodels** >= 0.12.0
-- **tensorflow** >= 2.6.0
-- **prophet** >= 1.0.0
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## 📖 Citation
-
-If you use this code in your research, please cite:
-
-```bibtex
-@article{valdivieso2025finops,
-  title={Machine Learning-Powered FinOps: Cloud Cost Forecasting and Optimization for Electric Vehicle Telematics Platforms},
-  author={Valdivieso, Víctor and Arrabal-Campos, Francisco Manuel and Sonderstrub, Christian and Cama-Pinto, Dora and Cama-Pinto, Alejandro},
-  journal={Journal of Cleaner Production},
-  year={2025},
-  publisher={Elsevier},
-  doi={10.1016/j.jclepro.2025.xxxxx}
-}
+```bash
+docker build -t finops-ev-repro .
+docker run --rm -v "$PWD/outputs:/app/outputs" finops-ev-repro
 ```
 
-## 📜 License
+## Citation
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+Use the metadata in `CITATION.cff`. The article DOI should be added only after Elsevier assigns it.
 
-## 🙏 Acknowledgements
+## License
 
-The authors gratefully acknowledge **Microsoft EMEA Client Delivery Partner** (Microsoft Campus, Carmenhall Road, Sandyford Business Park, Dublin D18 FW88, Ireland) for their technical support and collaboration in the development and optimization of the Azure cloud infrastructure that enabled this research.
-This research has been funded by the State Research Agency of the Spanish Ministry of Science and Innovation (PDC2021-121248-I00, PLEC2021-007774, PID2021-126445OB-I00 and CPP2022-009967) and by the Gobierno de España MCIN/AEI/10.13039/501100011033 and Unión Europea “Next Generation EU”/PRTR.
-
-## 📧 Contact
-
-**Francisco Manuel Arrabal-Campos** (Corresponding Author)
-- Email: fmarrabal@ual.es
-- ORCID: 0000-0002-5510-6297
-
----
-
-<p align="center">
-  <i>Supporting sustainable cloud computing for electric vehicle platforms</i>
-</p>
+Code is released under the MIT License. The indexed case-study values are supplied solely to reproduce the associated scientific analysis; users remain responsible for observing any institutional or contractual restrictions applicable to derived data.

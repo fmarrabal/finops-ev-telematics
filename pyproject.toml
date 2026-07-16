@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "finops-ev-telematics-repro"
+version = "2.0.0"
+description = "Reproducibility package for a FinOps-driven EV telematics cloud-cost case study"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [
+  {name = "Víctor Valdivieso"},
+  {name = "Francisco Manuel Arrabal-Campos", email = "fmarrabal@ual.es"},
+  {name = "Christian Sonderstrup"},
+  {name = "Dora Cama-Pinto"},
+  {name = "Alejandro Cama-Pinto"},
+]
+dependencies = [
+  "numpy>=1.26,<3",
+  "pandas>=2.1,<3",
+  "scipy>=1.11,<2",
+  "scikit-learn>=1.3,<2",
+  "statsmodels>=0.14,<0.15",
+  "matplotlib>=3.8,<4",
+]
+
+[project.optional-dependencies]
+neural = ["torch>=2.2,<3"]
+dev = ["pytest>=8,<10", "ruff>=0.6,<1"]
+
+[project.scripts]
+finops-reproduce = "finops_repro.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 100
